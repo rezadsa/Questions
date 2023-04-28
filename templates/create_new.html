@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/styles/create_new.css" />
+    <title>Add New</title>
+  </head>
+  <body>
+    <h1>Add a New Question</h1>
+
+    <form method="POST">
+      <div class="container">
+        <div class="question">
+          <label for="question">Question</label>
+          <input type="text" name="question" required />
+        </div>
+        <div class="answer">
+          <label for="answer">Answer</label>
+          <input type="text" name="answer" required />
+        </div>
+      </div>
+      <div class="submit">
+        <input type="submit" value="Add a New" />
+      </div>
+      <div class="home">
+        <a id="home" href="{{url_for('home_page')}}">Home page</a>
+      </div>
+    </form>
+   
+  </body>
+</html>

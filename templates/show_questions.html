@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/styles/show_questions.css" />
+    <title>Question</title>
+  </head>
+  <body>
+    <h1>Question</h1>
+    <div class="content">
+      <div class="question">
+        <p>{{question.question}}</p>
+      </div>
+      <div class="answer">{{question.answer}}</div>
+    </div>
+    <div>
+      <button>
+        {% if index >0 : %}
+        <a href="{{url_for('question_pages',index=index-1)}}"
+          >previous Question</a
+        >
+        {% else %}
+        <a href="{{url_for('question_pages',index=0)}}">first Question</a>
+        {% endif %}
+      </button>
+      <button>
+        {% if index < max_index : %}
+        <a href="{{url_for('question_pages',index=index+1)}}">Next Question</a>
+        {% else %}
+        <a href="{{url_for('question_pages',index=0)}}">Start Over</a>
+        {% endif %}
+      </button>
+    </div>
+    <div class="links">
+      <a id="home" href="{{url_for('home_page')}}">Home page</a>
+      <a href="{{url_for('remove_a_question',index=index)}}"
+        >Delete The Question</a
+      >
+    </div>
+  </body>
+</html>
